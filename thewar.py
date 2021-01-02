@@ -73,23 +73,28 @@ def play():
     p1_played_card = p1_deck.pop()
     p2_played_card = p2_deck.pop()
 
+# Decide the result of the hand
     if card_values[p1_played_card.value] > card_values[p2_played_card.value]:
         print(f"Player 1 wins the hand with {p1_played_card.value} of {p1_played_card.suit}.")
         print(f"Player 2 lost the hand with {p2_played_card.value} of {p2_played_card.suit}.")
         p1_collected_stack.append(p1_played_card)
         p1_collected_stack.append(p2_played_card)
+        print(f"Player 1 stack: {len(p1_deck)}.")
+        print(f"Player 1 collected stack: {len(p1_collected_stack)}.")
+        print(f"Player 2 stack: {len(p2_deck)}.")
+        print(f"Player 2 collected stack: {len(p2_collected_stack)}.")
     elif card_values[p1_played_card.value] < card_values[p2_played_card.value]:
         print(f"Player 2 wins the hand with {p2_played_card.value} of {p2_played_card.suit}.")
         print(f"Player 1 lost the hand with {p1_played_card.value} of {p1_played_card.suit}.")        
         p2_collected_stack.append(p2_played_card)
-        p2_collected_stack.append(p1_played_card)   
+        p2_collected_stack.append(p1_played_card)
+        print(f"Player 1 stack: {len(p1_deck)}.")
+        print(f"Player 1 collected stack: {len(p1_collected_stack)}.")
+        print(f"Player 2 stack: {len(p2_deck)}.")
+        print(f"Player 2 collected stack: {len(p2_collected_stack)}.")
+# The War mechanism
     else:
         print("The WAR!")
-
-# Decide the result of the hand
-
-
-# The War mechanism
 
 
 # Collect won cards to winners collected_stack
